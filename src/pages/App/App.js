@@ -37,7 +37,7 @@ class App extends Component {
       nflTeams: nflTeams.teams.strTeam,
       nhlTeams: nhlTeams.teams,
       nbaTeams: nbaTeams.teams,
-      nbaTeams: mlbTeams.teams,
+      mlbTeams: mlbTeams.teams,
   })
   }
 
