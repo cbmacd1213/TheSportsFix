@@ -5,7 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
-import { getAllSports } from '../../services/sports-api';
+import { getAllSports, getAllNFLTeams, getAllNHLTeams, getAllNBATeams, getAllMLBTeams } from '../../services/sports-api';
 
 
 class App extends Component {
@@ -13,15 +13,31 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
-      sports: []
+      sports: [],
+      nflTeams: [],
+      nhlTeams: [],
+      nbaTeams: [],
+      mlbTeams: [],
     };
   }
 
   async componentDidMount(){
     const sports = await getAllSports()
+    const nflTeams = await getAllNFLTeams()
+    const nhlTeams = await getAllNHLTeams()
+    const nbaTeams = await getAllNBATeams()
+    const mlbTeams = await getAllMLBTeams()
     console.log(sports.sports);
+    console.log(nflTeams.teams);
+    console.log(nhlTeams.teams);
+    console.log(nbaTeams.teams);
+    console.log(mlbTeams.teams);
     this.setState({
-      sports: sports.sports[5].strSport
+      sports: sports.sports[5].strSport,
+      nflTeams: nflTeams.teams.strTeam,
+      nhlTeams: nhlTeams.teams,
+      nbaTeams: nbaTeams.teams,
+      nbaTeams: mlbTeams.teams,
   })
   }
 
@@ -45,7 +61,7 @@ class App extends Component {
         />
         <Switch>
           <Route exact path='/' render={() =>
-           <div>{this.state.sports}</div> 
+           <div>{this.state.nflTeams}</div> 
            
           }/>
           <Route exact path='/signup' render={({ history }) => 
