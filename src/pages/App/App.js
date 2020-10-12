@@ -5,13 +5,24 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+import { getAllSports } from '../../services/sports-api';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      sports: []
     };
+  }
+
+  async componentDidMount(){
+    const sports = await getAllSports()
+    console.log(sports.sports);
+    this.setState({
+      sports: sports.sports[5].strSport
+  })
   }
 
   /*--- Callback Methods ---*/
@@ -34,7 +45,8 @@ class App extends Component {
         />
         <Switch>
           <Route exact path='/' render={() =>
-           <div>Hello World!</div> 
+           <div>{this.state.sports}</div> 
+           
           }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
