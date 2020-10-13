@@ -4,9 +4,9 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import NavBar from '../../components/NavBar/NavBar';
-import { getAllSports, getAllNFLTeams, getAllNHLTeams, getAllNBATeams, getAllMLBTeams } from '../../services/sports-api';
-
+import HomePage from '../HomePage/HomePage'
+import * as sportsAPI from '../../utils/sports-api';
+import * as trackedGamesAPI from '../../utils/trackedgames-api';
 
 class App extends Component {
   constructor() {
@@ -14,32 +14,36 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       sports: [],
-      nflTeams: [],
-      nhlTeams: [],
-      nbaTeams: [],
-      mlbTeams: [],
+  
+      
     };
+    console.log('DANG', this.state)
   }
 
   async componentDidMount(){
-    const sports = await getAllSports()
-    const nflTeams = await getAllNFLTeams()
-    const nhlTeams = await getAllNHLTeams()
-    const nbaTeams = await getAllNBATeams()
-    const mlbTeams = await getAllMLBTeams()
-    console.log(sports.sports);
-    console.log(nflTeams.teams);
-    console.log(nhlTeams.teams);
-    console.log(nbaTeams.teams);
-    console.log(mlbTeams.teams);
+    const sports = await sportsAPI.getAll()
+    const trackedgames = await trackedGamesAPI.getAll()
+    // const nflTeams = await getAllNFLTeams()
+    // const nhlTeams = await getAllNHLTeams()
+    // const nbaTeams = await getAllNBATeams()
+    // const mlbTeams = await getAllMLBTeams()
+    console.log(sportsAPI, sports);
+    console.log(trackedGamesAPI, trackedgames);
+    // console.log(nflTeams.teams);
+    // console.log(nhlTeams.teams);
+    // console.log(nbaTeams.teams);
+    // console.log(mlbTeams.teams);
     this.setState({
-      sports: sports.sports[5].strSport,
-      nflTeams: nflTeams.teams.strTeam,
-      nhlTeams: nhlTeams.teams,
-      nbaTeams: nbaTeams.teams,
-      mlbTeams: mlbTeams.teams,
+      sports:sports,
+      trackedgames: trackedgames
+      // nflTeams: nflTeams.teams.strTeam,
+      // nhlTeams: nhlTeams.teams,
+      // nbaTeams: nbaTeams.teams,
+      // mlbTeams: mlbTeams.teams,
   })
   }
+
+
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
@@ -55,13 +59,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar 
-        user={this.state.user} 
-        handleLogout={this.handleLogout}
-        />
         <Switch>
           <Route exact path='/' render={() =>
-           <div>{this.state.nflTeams}</div> 
+           <HomePage/>
+           
            
           }/>
           <Route exact path='/signup' render={({ history }) => 

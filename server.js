@@ -5,6 +5,7 @@ const logger = require('morgan');
 
 const app = express();
 
+
 require('dotenv').config();
 require('./config/database');
 
@@ -15,6 +16,8 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
+app.use('/api/trackedgames-api', require('./routes/api/trackedgames-api'));
+app.use('/api/sports', require('./routes/api/sports'));
 app.use('/api/users', require('./routes/api/users'));
 app.use(require('./config/auth'));
 

@@ -2,10 +2,12 @@
     display: flex;
     justify-content: center;
     margin: 0 0 20px;
+    background-color:white;
   }
   
   .NavBar-link {
     margin: 0 10px;
+    font-size: 25px;
   }
   
   .NavBar-welcome {
