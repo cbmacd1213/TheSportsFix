@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ButtonList from '../../components/ButtonList/ButtonList';
 import NavBar from '../../components/NavBar/NavBar';
+import TrackedTeamList from '../../components/TrackedTeamsList/TrackedTeamsList';
 
 
 const HomePage = (props) => {
@@ -10,6 +12,8 @@ const HomePage = (props) => {
         user={props.user}
         handleLogout={props.handleLogout}
       />
+      <ButtonList/>
+      <TrackedTeamList/>
      
       <footer>
     

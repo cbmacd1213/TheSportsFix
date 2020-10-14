@@ -23,6 +23,7 @@ function leagueDetail(req, res) {
     // handle success
         console.log(response);
         res.json(response.data)
+        
     })
     .catch(function (error) {
     // handle error

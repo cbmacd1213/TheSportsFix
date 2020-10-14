@@ -1,3 +1,4 @@
+const axios = require('axios')
 const TrackedGamesList = require('../models/trackedgameslist');
 
 module.exports = {
@@ -9,9 +10,9 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const trackedGamesLists = await TrackedGamesList.find({});
-  console.log(trackedGamesLists);
-  res.status(200).json({trackedGamesLists});
+  let trackedGamesLists = await TrackedGamesList.find({});
+  console.log('SHITBALLS',trackedGamesLists);
+  res.status(200).json(trackedGamesLists);
 }
 
 async function show(req, res) {
@@ -20,6 +21,7 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+    console.log('HELLO WORLD', req.body);
   const trackedGamesList = await TrackedGamesList.create(req.body);
   res.status(201).json(trackedGamesList);
 }

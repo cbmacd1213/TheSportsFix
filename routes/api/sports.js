@@ -4,6 +4,7 @@ const sportsAPICtrl = require('../../controllers/sports');
 
 
 router.get('/league/:id', sportsAPICtrl.leagueDetail);
+router.post('/league/:id', sportsAPICtrl.leagueDetail);
 router.get('/league/:id/events', sportsAPICtrl.leagueEvents);
 
 

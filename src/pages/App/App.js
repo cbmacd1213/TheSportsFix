@@ -1,45 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import HomePage from '../HomePage/HomePage'
-import * as sportsAPI from '../../utils/sports-api';
-import * as trackedGamesAPI from '../../utils/trackedgames-api';
+import sportsService from '../../utils/sportsService';
+import trackedGamesService from '../../utils/trackedGamesService';
+
+
+
+
+// function App() {
+//   const [log, setLog] = useState([]);
+//   const [handleLogout, handleSignupOrLogin] = useState('');
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     trackedGamesService.index().then(res => setLog(res.reverse()));
+//     sportsService.index().then(res => setLog(res.reverse()));
+//   }, []);
+
+
+
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: userService.getUser(),
-      sports: [],
-  
-      
+      sports: [], 
     };
     console.log('DANG', this.state)
   }
 
   async componentDidMount(){
-    const sports = await sportsAPI.getAll()
-    const trackedgames = await trackedGamesAPI.getAll()
-    // const nflTeams = await getAllNFLTeams()
-    // const nhlTeams = await getAllNHLTeams()
-    // const nbaTeams = await getAllNBATeams()
-    // const mlbTeams = await getAllMLBTeams()
-    console.log(sportsAPI, sports);
-    console.log(trackedGamesAPI, trackedgames);
-    // console.log(nflTeams.teams);
-    // console.log(nhlTeams.teams);
-    // console.log(nbaTeams.teams);
-    // console.log(mlbTeams.teams);
+    const sports = await sportsService.leagueDetail()
+    const trackedgames = await trackedGamesService.index()
+    console.log("BALL", trackedGamesService, trackedgames);
+    console.log("SACK", sportsService, sports);
     this.setState({
       sports:sports,
       trackedgames: trackedgames
-      // nflTeams: nflTeams.teams.strTeam,
-      // nhlTeams: nhlTeams.teams,
-      // nbaTeams: nbaTeams.teams,
-      // mlbTeams: mlbTeams.teams,
   })
   }
 
@@ -54,9 +57,26 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()})
   }
+
+
+  // useState(() => {
+  //   handleLogout.logout({user:null})
+  // })
+
+  // handleLogout = () => {
+  //   userService.logout();
+  //   useState({user: null})
+  // }
+
+  // handleSignupOrLogin = () => {
+  //   useState({user: userService.getUser()})
+  // }
+
+
+  
   /*--- Lifecycle Methods ---*/
 
-  render() {
+   render() {
     return (
       <div>
         <Switch>
