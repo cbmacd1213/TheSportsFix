@@ -7,16 +7,31 @@ const LeaguePage = (props) => {
     let { league } = useParams();
     const[details, setDetails]= useState(null)
     const[events, setEvents]= useState(null)
+    const[loading, setLoading]= useState(true)
     useEffect(()=>{
-        sportsService.leagueDetail(league).then(res => setDetails(res))
-        sportsService.leagueEvents(league).then(res => setEvents(res))
-    }, [league, events])
+        sportsService.leagueDetail(league).then(res =>{
+            setDetails(res)
+            sportsService.leagueEvents(league).then(res => {
+                setEvents(res)
+                setLoading(false)
+            })
+            
+        })
+         
+    }, [league])
     return (
-        <>
-        <div>HELLO WORLD</div>
-        <div>{league}</div>
-        <div>{league.events}</div>
-        </>
+        loading ? (
+            <>
+           <div> loading </div> 
+           </>
+        ):(
+            <>
+            <div>HELLO WORLD</div>
+            <div>{league}</div>
+            <div>{events.events[0].strEvent}</div>
+            </>
+
+        )
     )
 
 }
