@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import LeaguePage from '../../components/LeaguePage/LeaguePage';
 import userService from '../../utils/userService';
 import HomePage from '../HomePage/HomePage'
 import sportsService from '../../utils/sportsService';
@@ -36,12 +37,13 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    const sports = await sportsService.leagueDetail()
+    const sportsDetails = await sportsService.leagueDetail()
+    //const sportsEvents = await sportsService.leagueEvents()
     const trackedgames = await trackedGamesService.index()
-    console.log("BALL", trackedGamesService, trackedgames);
-    console.log("SACK", sportsService, sports);
+    console.log("FUN", trackedGamesService, trackedgames);
+    console.log("GODDAMN SPORTS", sportsService, sportsDetails);
     this.setState({
-      sports:sports,
+      sportsDetails:sportsDetails,
       trackedgames: trackedgames
   })
   }
@@ -96,6 +98,11 @@ class App extends Component {
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+          <Route exact path='/leagues/:league' render={({history}) => 
+            <LeaguePage
+              history={history}
             />
           }/>
         </Switch>

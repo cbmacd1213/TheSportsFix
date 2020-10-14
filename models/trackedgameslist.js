@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const { type } = require('os');
-const { string } = require('yargs');
 const user = require('./user');
 const Schema = mongoose.Schema;
 

@@ -6,10 +6,10 @@ router.use(require('../../config/auth'));
 
 
 router.get('/', trackedGamesListCtrl.index);
-router.get('/:id', trackedGamesListCtrl.show);
+router.get('/', trackedGamesListCtrl.show);
 router.post('/', trackedGamesListCtrl.create);
-router.delete('/:id', trackedGamesListCtrl.delete);
-router.put('/:id', trackedGamesListCtrl.update);
+router.delete('/', trackedGamesListCtrl.delete);
+router.put('/', trackedGamesListCtrl.update);
 
 
 
