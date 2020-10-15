@@ -2,14 +2,34 @@
     display: flex;
     justify-content: center;
     margin: 0 0 20px;
-    background-color:white;
+    background-color: royalblue;
+  }
+
+  .register {
+    align-self: center;
+    align-content: flex-end;
   }
   
-  .NavBar-link {
+  
+  .NavBar-Sports-link {
+    align-self: center;
+    align-content: flex-end;
+  }
+  
+  .h1-title,
+  .NavBar-link,
+  .NavBar-Sports-link {
     margin: 0 10px;
     font-size: 25px;
+    color: seashell;
+    align-self: center;
   }
   
+  .h1-title {
+    font-size: 35px;
+  }
+
+
   .NavBar-welcome {
     color: grey;
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import trackedgameslist from "../../../models/trackedgameslist";
 import TrackedGame from "../TrackedGame/TrackedGame";
 import './TrackedGamesList.css'
 
@@ -7,12 +8,7 @@ import './TrackedGamesList.css'
 function TrackedGamesList(props) {
   return (
     <>
-        <div className="tracked-games-box">
-        <TrackedGame/>
-        <TrackedGame/>
-        <TrackedGame/>
-        <TrackedGame/>
-        </div>
+        {}
     </>
   );
 }

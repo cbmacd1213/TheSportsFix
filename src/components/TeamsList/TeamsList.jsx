@@ -1,12 +1,21 @@
+import { create } from 'object-path'
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import sportsService from '../../utils/sportsService'
+import trackedGamesService from '../../utils/trackedGamesService'
 
 
 const TeamsList = (props) => {
+  const handleClick = () => {
+    let obj = {
+      apiID: props.team.strTeam,
+      sportType: props.team.league,
+      game: false,
+    }
+    trackedGamesService.create(obj).then(res => props.history.push('/'));
+  }
   return (
     <>
-        <button>
+        <button onClick={handleClick}>
             {props.team.strTeam}
         </button>
     </>

@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
+const { boolean } = require('yargs');
 const user = require('./user');
 const Schema = mongoose.Schema;
 
 const trackedGamesListSchema = new Schema({
-  gameID: String,
-  trackedBy:[{type: Schema.Types.ObjectId}],
+  apiID: String,
+  user: {type: Schema.Types.ObjectId},
   sportType: {type: String, enum:['NFL', 'NHL', 'NBA', 'MLB']},
+  game: Boolean
 }, {
   timestamps: true
 });

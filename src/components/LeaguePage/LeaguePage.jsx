@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import sportsService from '../../utils/sportsService'
 import GamesList from '../GamesList/GamesList';
+import NavBar from '../NavBar/NavBar';
 import TeamsList from '../TeamsList/TeamsList';
 
 const LeaguePage = (props) => {
@@ -17,28 +18,31 @@ const LeaguePage = (props) => {
                 setEvents(res)
                 setLoading(false)
             })
-            console.log('Fuckin sports');
         })
-         
-        console.log('shit', league[0]);
     }, [league])
     return (
+
         loading ? (
             <>
            <div> loading </div> 
            </>
         ):(
             <>
-            <div>{league}</div>
-            <ul>
+            <NavBar/>
+            <div>
+                <h2>
+                    {league}
+                </h2>
+            </div>
+                <h3>Games</h3>  
+            <ul className='GamesList'>
                 {events.events && events.events.map((event) => (
-                    <>   
-                    <li>
-                      <button>
+                    <> 
+                    <li>  
                         <GamesList 
                             event = {event}
-                        /> 
-                      </button>
+                            history = {props.history}
+                            />
                     </li>
             
                 </>
@@ -47,18 +51,18 @@ const LeaguePage = (props) => {
         }
             
             </ul>
-            <ul>
+                <h3>Teams</h3>
+            <ul className='TeamsList'>
                 {teams.teams && teams.teams.map((team) => (
                     <>   
                     <li>
                         <TeamsList
                             team= {team}
-                        />
+                            history = {props.history}
+                            />
                     </li>
-                    
                     </>
-                    ))}
-                    
+                    ))} 
                 </ul>
             </>
             

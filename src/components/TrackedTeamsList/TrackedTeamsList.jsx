@@ -1,5 +1,7 @@
 import React from "react";
+import TeamsList from "../TeamsList/TeamsList";
 import TrackedTeam from "../TrackedTeam/TrackedTeam";
+import trackedTeamsService from "../../utils/trackedGamesService";
 import './TrackedTeamsList.css'
 
 
@@ -7,12 +9,15 @@ import './TrackedTeamsList.css'
 function TrackedTeamList(props) {
   return (
     <>
-        <div className="tracked-teams-box">
-        <TrackedTeam/>
-        <TrackedTeam/>
-        <TrackedTeam/>
-        <TrackedTeam/>
-        </div>
+        {/* <ul>
+        {teams.teams.map((team) =>
+        <>
+        <li>
+          <TrackedTeam/>
+        </li>
+        </>
+        )}
+        </ul> */}
     </>
   );
 }
