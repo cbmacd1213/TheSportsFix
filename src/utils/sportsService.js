@@ -7,7 +7,7 @@ export default {
 }
 
 function leagueDetail(league) {
-    console.log(leagueDetail, league)
+    
     const options = {
         method: 'GET',
         headers: {
@@ -18,7 +18,7 @@ function leagueDetail(league) {
 }
 
 function leagueEvents(league) {
-    console.log(leagueEvents, league)
+    
     const options = {
         method: 'GET',
         headers: {

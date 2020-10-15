@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar = (props) => {
@@ -15,10 +15,22 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
     </div>;
+    
 
   return (
     <div className='NavBar'>
+      <>
+      <div>
+      <NavLink exact to='/leagues/NFL'>NFL</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/NHL'>NHL</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/NBA'>NBA</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/MLB'>MLB</NavLink>
+      </div>
       {nav}
+      </>
     </div>
   );
 };

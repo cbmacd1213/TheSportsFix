@@ -13,14 +13,6 @@ const HomePage = (props) => {
         user={props.user}
         handleLogout={props.handleLogout}
       />
-    
-      <NavLink exact to='/leagues/NFL'>NFL</NavLink>
-      &nbsp;&nbsp;&nbsp;
-      <NavLink exact to='/leagues/NHL'>NHL</NavLink>
-      &nbsp;&nbsp;&nbsp;
-      <NavLink exact to='/leagues/NBA'>NBA</NavLink>
-      &nbsp;&nbsp;&nbsp;
-      <NavLink exact to='/leagues/MLB'>MLB</NavLink>
       <TrackedGamesList/>
       <TrackedTeamList/>
      

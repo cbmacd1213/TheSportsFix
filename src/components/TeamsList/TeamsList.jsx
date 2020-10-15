@@ -3,11 +3,13 @@ import {useParams} from 'react-router-dom'
 import sportsService from '../../utils/sportsService'
 
 
-const GamesList = (props) => {
+const TeamsList = (props) => {
   return (
     <>
-        {props.event.strEvent} - {props.event.dateEvent}
+        <button>
+            {props.team.strTeam}
+        </button>
     </>
   );
 }
-export default GamesList;
+export default TeamsList;

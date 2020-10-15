@@ -8,9 +8,6 @@ const leagueLookup = {
     MLB: 4424,
 }
 
-const nflTeamLookup = {
-
-}
 
 module.exports = {
     leagueDetail,
