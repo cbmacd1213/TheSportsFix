@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ButtonList from '../../components/ButtonList/ButtonList';
+import { Link, NavLink } from 'react-router-dom';
+// import ButtonList from '../../components/ButtonList/ButtonList';
 import NavBar from '../../components/NavBar/NavBar';
 import TrackedGamesList from '../../components/TrackedGamesList/TrackedGamesList';
 import TrackedTeamList from '../../components/TrackedTeamsList/TrackedTeamsList';
@@ -13,7 +13,14 @@ const HomePage = (props) => {
         user={props.user}
         handleLogout={props.handleLogout}
       />
-      <ButtonList/>
+    
+      <NavLink exact to='/leagues/NFL'>NFL</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/NHL'>NHL</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/NBA'>NBA</NavLink>
+      &nbsp;&nbsp;&nbsp;
+      <NavLink exact to='/leagues/MLB'>MLB</NavLink>
       <TrackedGamesList/>
       <TrackedTeamList/>
      
