@@ -3,30 +3,57 @@ import { useParams } from 'react-router-dom';
 import trackedGamesService from '../../utils/trackedGamesService'
 import sportsService from '../../utils/sportsService'
 import NavBar from '../../components/NavBar/NavBar';
-import TrackedGamesList from '../../components/TrackedGamesList/TrackedGamesList';
-import TrackedTeamList from '../../components/TrackedTeamsList/TrackedTeamsList';
+import TrackedGame from '../../components/TrackedGame/TrackedGame';
+import TrackedTeam from '../../components/TrackedTeam/TrackedTeam';
+
 
 
 const HomePage = (props) => {
-    const[trackedGames, setTrackedGames]= useState(null)
+    const[trackedGames, setTrackedGames]= useState([])
+    const[trackedTeams, setTrackedTeams]= useState([])
     useEffect(()=>{
       trackedGamesService.index().then(res =>{
-          setTrackedGames(res)
+          let games = [];
+          let teams = [];
+          res.forEach(thing => {
+            if (thing.game){
+              games.push(thing)
+            } else {
+              teams.push(thing)
+            }
+          })
+          setTrackedGames(games)
+          setTrackedTeams(teams)
         })
-    }, [])
+    }, [props.user])
   return (
     <div className="HomePage">
       
-      <NavBar
-        user={props.user}
-        handleLogout={props.handleLogout}
-      />
-      <TrackedGamesList/>
-      <TrackedTeamList
-        team={props.team}
-        handleClick={props.handleClick}
-        history={props.history}
-      />
+      
+      <ul>
+        {trackedGames.map((game, idx) => (
+          
+          <li> 
+          <TrackedGame
+          key={idx}
+          game={game}
+          />
+          </li>
+          ))}
+       
+      </ul>
+      <ul>
+        {trackedTeams.map((team, idx) => (
+          
+          <li> 
+          <TrackedTeam
+          key={idx}
+          team={team}
+          />
+          </li>
+          ))}
+       
+      </ul>
      
       <footer>
     

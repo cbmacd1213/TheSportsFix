@@ -1,22 +1,16 @@
-import React, {useState, useEffect} from "react";
-import trackedGamesService from "../../utils/trackedGamesService";
+import React from "react";
+import {useParams} from 'react-router-dom'
+import sportsService from '../../utils/sportsService'
+import TrackedGamesService from '../../utils/trackedGamesService'
 
 
-
-
-function TrackedTeam(props) {
-  const[TrackedTeam, setTrackedTeam]= useState([])
-  let obj = {
-    apiID: props.team.strTeam,
-    sportType: props.team.league,
-    game: false,
-  }
-  trackedGamesService.index().then(res => props.history)
+function TrackedGame(props) {
   return (
     <>
-       []
-
+      <h4>
+        {props.team.strTeam}
+      </h4>
     </>
   );
 }
-export default TrackedTeam;
+export default TrackedGame;

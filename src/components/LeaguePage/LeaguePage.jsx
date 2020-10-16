@@ -28,7 +28,7 @@ const LeaguePage = (props) => {
            </>
         ):(
             <>
-            <NavBar/>
+            
             <div>
                 <h2>
                     {league}
