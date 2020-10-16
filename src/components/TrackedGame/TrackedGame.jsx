@@ -8,9 +8,7 @@ import TrackedGamesList from "../TrackedGamesList/TrackedGamesList";
 function TrackedGame(props) {
   return (
     <>
-       {/* <TrackedGamesList/> */}
        
-
     </>
   );
 }

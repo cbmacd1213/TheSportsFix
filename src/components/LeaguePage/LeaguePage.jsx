@@ -44,7 +44,6 @@ const LeaguePage = (props) => {
                             history = {props.history}
                             />
                     </li>
-            
                 </>
             ))
             
@@ -59,6 +58,7 @@ const LeaguePage = (props) => {
                         <TeamsList
                             team= {team}
                             history = {props.history}
+                            handleClick = {props.handleClick}
                             />
                     </li>
                     </>

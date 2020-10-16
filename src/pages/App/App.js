@@ -102,7 +102,9 @@ class App extends Component {
           }/>
           <Route exact path='/leagues/:league' render={({history}) => 
             <LeaguePage
-              history={history}
+            
+            history = {history}
+            
             />
           }/>
         </Switch>

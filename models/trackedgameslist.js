@@ -7,7 +7,11 @@ const trackedGamesListSchema = new Schema({
   apiID: String,
   user: {type: Schema.Types.ObjectId},
   sportType: {type: String, enum:['NFL', 'NHL', 'NBA', 'MLB']},
-  game: Boolean
+  game: Boolean,
+  dateEvent: String,
+  strEvent: String,
+  strTeam: String,
+  strTeamLogo: String
 }, {
   timestamps: true
 });

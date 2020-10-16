@@ -7,9 +7,11 @@ import trackedGamesService from '../../utils/trackedGamesService'
 const TeamsList = (props) => {
   const handleClick = () => {
     let obj = {
-      apiID: props.team.strTeam,
-      sportType: props.team.league,
+      apiID: props.team.idTeam,
+      sportType: props.team.idLeague,
       game: false,
+      strTeam: props.team.strTeam,
+      strTeamLogo: props.team.strTeamLogo
     }
     trackedGamesService.create(obj).then(res => props.history.push('/'));
   }

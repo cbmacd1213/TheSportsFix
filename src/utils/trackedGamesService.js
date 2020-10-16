@@ -21,7 +21,7 @@ function create(trackedGamesList) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
-    body: JSON.stringify({trackedGamesList})
+    body: JSON.stringify(trackedGamesList)
   }).then(res => res.json());
 }
 

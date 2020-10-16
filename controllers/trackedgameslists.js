@@ -9,6 +9,13 @@ module.exports = {
   update
 };
 
+const leagueLookup = {
+  4391: "NFL",
+  4380: "NHL",
+  4387: "NBA",
+  4424: "MLB",
+}
+
 async function index(req, res) {
   let trackedGamesLists = await TrackedGamesList.find({user:req.user._id});
   console.log('user centric',trackedGamesLists);
@@ -21,7 +28,8 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
-    req.body.user = req.user._id
+  req.body.sportType = leagueLookup[req.body.sportType]
+  req.body.user = req.user._id
   const trackedGamesList = await TrackedGamesList.create(req.body);
   res.status(201).json(trackedGamesList);
 }

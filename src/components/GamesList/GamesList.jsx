@@ -9,12 +9,15 @@ const GamesList = (props) => {
       apiID: props.event.strEvent,
       sportType: props.event.league,
       game: true,
+      dateEvent: props.event.dateEvent,
+      strEvent: props.event.strEvent
     }
     trackedGamesService.create(obj).then(res => props.history.push('/'));
   }
   return (
     <>
-    <button onClick={handleClick}>
+    <button 
+    onClick={handleClick}>
         {props.event.strEvent} - {props.event.dateEvent}
     </button>
     </>
