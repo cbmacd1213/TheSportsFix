@@ -4,13 +4,16 @@ import sportsService from '../../utils/sportsService'
 import TrackedGamesService from '../../utils/trackedGamesService'
 
 
-function TrackedGame(props) {
+function TrackedTeam(props) {
   return (
     <>
+    <div className='team-div'>
       <h4>
         {props.team.strTeam}
       </h4>
+      <img src={props.team.strTeamLogo} width='200px' ></img>
+    </div>
     </>
   );
 }
-export default TrackedGame;
+export default TrackedTeam;

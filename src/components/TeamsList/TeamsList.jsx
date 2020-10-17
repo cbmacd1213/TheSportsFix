@@ -17,9 +17,11 @@ const TeamsList = (props) => {
   }
   return (
     <>
+    <div>
         <button onClick={handleClick}>
-            {props.team.strTeam}
+        <img src={props.team.strTeamLogo} width='200px'></img>
         </button>
+    </div>
     </>
   );
 }

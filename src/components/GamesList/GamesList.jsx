@@ -10,7 +10,9 @@ const GamesList = (props) => {
       sportType: props.event.league,
       game: true,
       dateEvent: props.event.dateEvent,
-      strEvent: props.event.strEvent
+      strEvent: props.event.strEvent,
+      intHomeScore: props.event.intHomeScore,
+      intAwayScore: props.event.intAwayScore,
     }
     trackedGamesService.create(obj).then(res => props.history.push('/'));
   }
