@@ -18,7 +18,7 @@ const TeamsList = (props) => {
   }
   return (
     <>
-    <ListGroupItem>
+    <ListGroupItem variant="flush">
         <button onClick={handleClick}>
         <img src={props.team.strTeamLogo} width='200px'></img>
         </button>

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 import sportsService from '../../utils/sportsService'
 import GamesList from '../GamesList/GamesList';
 import NavBar from '../NavBar/NavBar';
 import TeamsList from '../TeamsList/TeamsList';
+import './LeaguePage.css'
 
 const LeaguePage = (props) => {
 
@@ -36,7 +37,7 @@ const LeaguePage = (props) => {
                 </h2>
             </div>
                 <h3>Games</h3>  
-            <ul className='GamesList'>
+            <ul className='ListGroup'>
                 {events.events && events.events.map((event) => (
                     <> 
                     <li>  
@@ -52,19 +53,19 @@ const LeaguePage = (props) => {
             
             </ul>
                 <h3>Teams</h3>
-            <ul className='TeamsList'>
+            <ListGroup horizontal variant="flush" className="ListGroup">
                 {teams.teams && teams.teams.map((team) => (
                     <>   
-                    <ListGroup horizontal>
+                    <ListGroupItem variant="flush">
                         <TeamsList
                             team= {team}
                             history = {props.history}
                             handleClick = {props.handleClick}
                             />
-                    </ListGroup>
+                    </ListGroupItem>
                     </>
                     ))} 
-                </ul>
+                </ListGroup>
             </>
             
             ))
