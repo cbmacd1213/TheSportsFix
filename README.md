@@ -4,6 +4,8 @@ https://thesportsfix.herokuapp.com/signup
 
 https://trello.com/b/Oie0oP5K/the-sports-fix
 
+https://www.thesportsdb.com/api.php
+
 <h2>Welcome Sports Fans!</h2>
 <p>Here at The Sports Fix, you'll be able to find information on your favorite sports teams or scores of the games of the week that you choose. You can also click on a new team to learn something new about them through their descriptions. </p>
 
