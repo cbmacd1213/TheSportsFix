@@ -14,6 +14,7 @@ const trackedGamesListSchema = new Schema({
   strTeamLogo: String,
   intHomeScore: String,
   intAwayScore: String,
+  strDescriptionEN: String
 }, {
   timestamps: true
 });

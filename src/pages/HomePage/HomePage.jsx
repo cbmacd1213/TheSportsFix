@@ -5,6 +5,7 @@ import sportsService from '../../utils/sportsService'
 import NavBar from '../../components/NavBar/NavBar';
 import TrackedGame from '../../components/TrackedGame/TrackedGame';
 import TrackedTeam from '../../components/TrackedTeam/TrackedTeam';
+import { CardGroup, Card, CardColumns } from 'react-bootstrap';
 
 
 
@@ -28,32 +29,38 @@ const HomePage = (props) => {
     }, [props.user])
   return (
     <div className="HomePage">
-      
-      
-      <ul>
+      <div className="container">
+      <h1 className="HomePage tracked-title text-center"> Tracked Games </h1>
+
+      <CardColumns>
         {trackedGames.map((game, idx) => (
           
-          <li> 
+          
           <TrackedGame
           key={idx}
           game={game}
           />
-          </li>
+          
           ))}
        
-      </ul>
-      <ul>
+      </CardColumns>
+      </div>
+      
+      <div className="container">
+      <h1 className="HomePage tracked-title text-center"> Tracked Teams </h1>
+      <CardColumns>
         {trackedTeams.map((team, idx) => (
           
-          <li> 
+          
           <TrackedTeam
           key={idx}
           team={team}
           />
-          </li>
+          
           ))}
        
-      </ul>
+      </CardColumns>
+      </div>
      
       <footer>
     

@@ -2,11 +2,23 @@
     display: flex;
     justify-content: center;
     margin: 0 0 20px;
-    background-color: royalblue;
+    background-color: royalblue !important;
   }
 
 .ListGroup {
   list-style-type: none;
   display: inline-block;
   flex-wrap: wrap;
+  border: 0 0 0 0 !important;
+}
+
+.ListGroupItem, .list-group-item{
+  border: none;
+}
+
+.GameList {
+  margin: 20px !important;
+  min-width: 200px;
+  max-width: 200px;
+ 
 }

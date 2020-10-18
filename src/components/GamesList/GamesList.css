@@ -1,4 +1,6 @@
-.ListGroup {
-    list-style-type: none; 
-    display: inline-block;
-  }
+.GamesList {
+  margin: 20px !important;
+  min-width: 200px;
+  max-width: 200px;
+ 
+}

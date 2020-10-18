@@ -1,0 +1,5 @@
+.tracked-game {
+    list-style-type: none;
+    display: inline-block;
+    flex-wrap: wrap;
+  }

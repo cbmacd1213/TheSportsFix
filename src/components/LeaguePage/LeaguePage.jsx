@@ -37,7 +37,7 @@ const LeaguePage = (props) => {
                 </h2>
             </div>
                 <h3>Games</h3>  
-            <ul className='ListGroup'>
+            <ListGroup horizontal className='ListGroup'>
                 {events.events && events.events.map((event) => (
                     <> 
                     <li>  
@@ -51,19 +51,19 @@ const LeaguePage = (props) => {
             
         }
             
-            </ul>
+            </ListGroup>
                 <h3>Teams</h3>
-            <ListGroup horizontal variant="flush" className="ListGroup">
+            <ListGroup horizontal className="ListGroup">
                 {teams.teams && teams.teams.map((team) => (
-                    <>   
-                    <ListGroupItem variant="flush">
+                       
+                    <ListGroupItem className= "ListGroupItem" variant="flush">
                         <TeamsList
                             team= {team}
                             history = {props.history}
                             handleClick = {props.handleClick}
                             />
                     </ListGroupItem>
-                    </>
+                    
                     ))} 
                 </ListGroup>
             </>

@@ -19,8 +19,10 @@ const GamesList = (props) => {
   }
   return (
     <>
+  
     <Button
     variant="dark" 
+    className="GamesList"
     onClick={handleClick}>
         {props.event.strEvent} - {props.event.dateEvent}
     </Button>

@@ -12,18 +12,19 @@ const TeamsList = (props) => {
       sportType: props.team.idLeague,
       game: false,
       strTeam: props.team.strTeam,
-      strTeamLogo: props.team.strTeamLogo
+      strTeamLogo: props.team.strTeamLogo,
+      strDescriptionEN: props.team.strDescriptionEN
     }
     trackedGamesService.create(obj).then(res => props.history.push('/'));
   }
   return (
+    
     <>
-    <ListGroupItem variant="flush">
         <button onClick={handleClick}>
         <img src={props.team.strTeamLogo} width='200px'></img>
         </button>
-    </ListGroupItem>
     </>
+    
   );
 }
 export default TeamsList;
