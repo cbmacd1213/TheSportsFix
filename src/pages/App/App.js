@@ -11,23 +11,6 @@ import trackedGamesService from '../../utils/trackedGamesService';
 import NavBar from '../../components/NavBar/NavBar';
 
 
-
-
-
-// function App() {
-//   const [log, setLog] = useState([]);
-//   const [handleLogout, handleSignupOrLogin] = useState('');
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     trackedGamesService.index().then(res => setLog(res.reverse()));
-//     sportsService.index().then(res => setLog(res.reverse()));
-//   }, []);
-
-
-
-
-
 class App extends Component {
   constructor() {
     super();
@@ -42,8 +25,6 @@ class App extends Component {
     const sportsDetails = await sportsService.leagueDetail()
     //const sportsEvents = await sportsService.leagueEvents()
     const trackedgames = await trackedGamesService.index()
-    console.log("FUN", trackedGamesService, trackedgames);
-    console.log("GODDAMN SPORTS", sportsService, sportsDetails);
     this.setState({
       sportsDetails:sportsDetails,
       trackedgames: trackedgames
@@ -62,19 +43,6 @@ class App extends Component {
     this.setState({user: userService.getUser()})
   }
 
-
-  // useState(() => {
-  //   handleLogout.logout({user:null})
-  // })
-
-  // handleLogout = () => {
-  //   userService.logout();
-  //   useState({user: null})
-  // }
-
-  // handleSignupOrLogin = () => {
-  //   useState({user: userService.getUser()})
-  // }
 
 
   

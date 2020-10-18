@@ -13,7 +13,8 @@ const TeamsList = (props) => {
       game: false,
       strTeam: props.team.strTeam,
       strTeamLogo: props.team.strTeamLogo,
-      strDescriptionEN: props.team.strDescriptionEN
+      strDescriptionEN: props.team.strDescriptionEN,
+      strWebsite: props.team.strWebsite
     }
     trackedGamesService.create(obj).then(res => props.history.push('/'));
   }

@@ -32,11 +32,11 @@ const LeaguePage = (props) => {
             <>
             
             <div className ='league-title'>
-                <h2>
+                <h1 className="some-titles text-center">
                     {league}
-                </h2>
+                </h1>
             </div>
-                <h3>Games</h3>  
+                <h3 className="some-titles text-center">Games</h3>  
             <ListGroup horizontal className='ListGroup'>
                 {events.events && events.events.map((event) => (
                     <> 
@@ -52,7 +52,7 @@ const LeaguePage = (props) => {
         }
             
             </ListGroup>
-                <h3>Teams</h3>
+                <h3 className="some-titles text-center">Teams</h3>
             <ListGroup horizontal className="ListGroup">
                 {teams.teams && teams.teams.map((team) => (
                        

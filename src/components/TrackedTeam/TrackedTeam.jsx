@@ -16,6 +16,8 @@ function TrackedTeam(props) {
             {props.team.strTeam}
           </Card.Title>
       <Card.Text>
+      <a href={props.team.strWebsite} rel="noopener noreferrer" target="_blank">{props.team.strWebsite}
+      </a><br />
       {props.team.strDescriptionEN}
       </Card.Text>
     </Card.Body>
