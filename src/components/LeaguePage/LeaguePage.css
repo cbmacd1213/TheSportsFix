@@ -7,7 +7,6 @@
 
 .ListGroup {
   list-style-type: none;
-  display: inline-block;
   flex-wrap: wrap;
   border: 0 0 0 0 !important;
 }
