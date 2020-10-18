@@ -1,5 +1,5 @@
 import React from "react";
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import sportsService from '../../utils/sportsService'
 import TrackedGamesService from '../../utils/trackedGamesService'
 import { Card, CardGroup, Accordion, Button } from 'react-bootstrap'
@@ -16,8 +16,6 @@ function TrackedTeam(props) {
             {props.team.strTeam}
           </Card.Title>
       <Card.Text>
-      <a href={props.team.strWebsite} rel="noopener noreferrer" target="_blank">{props.team.strWebsite}
-      </a><br />
       {props.team.strDescriptionEN}
       </Card.Text>
     </Card.Body>
