@@ -1,5 +1,6 @@
 import { create } from 'object-path'
 import React, {useState, useEffect} from 'react'
+import { ListGroupItem } from 'react-bootstrap'
 import {useParams} from 'react-router-dom'
 import trackedGamesService from '../../utils/trackedGamesService'
 
@@ -17,11 +18,11 @@ const TeamsList = (props) => {
   }
   return (
     <>
-    <div>
+    <ListGroupItem>
         <button onClick={handleClick}>
         <img src={props.team.strTeamLogo} width='200px'></img>
         </button>
-    </div>
+    </ListGroupItem>
     </>
   );
 }

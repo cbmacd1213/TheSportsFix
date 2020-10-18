@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { ListGroup } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 import sportsService from '../../utils/sportsService'
 import GamesList from '../GamesList/GamesList';
@@ -29,7 +30,7 @@ const LeaguePage = (props) => {
         ):(
             <>
             
-            <div>
+            <div className ='league-title'>
                 <h2>
                     {league}
                 </h2>
@@ -54,13 +55,13 @@ const LeaguePage = (props) => {
             <ul className='TeamsList'>
                 {teams.teams && teams.teams.map((team) => (
                     <>   
-                    <li>
+                    <ListGroup horizontal>
                         <TeamsList
                             team= {team}
                             history = {props.history}
                             handleClick = {props.handleClick}
                             />
-                    </li>
+                    </ListGroup>
                     </>
                     ))} 
                 </ul>

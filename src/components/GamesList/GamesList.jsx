@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import trackedGamesService from '../../utils/trackedGamesService'
-
+import { Button } from 'react-bootstrap';
 
 const GamesList = (props) => {
   const handleClick = () => {
@@ -18,10 +18,11 @@ const GamesList = (props) => {
   }
   return (
     <>
-    <button 
+    <Button
+    variant="primary" 
     onClick={handleClick}>
         {props.event.strEvent} - {props.event.dateEvent}
-    </button>
+    </Button>
     </>
   );
 }

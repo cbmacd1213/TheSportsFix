@@ -8,7 +8,8 @@ import userService from '../../utils/userService';
 import HomePage from '../HomePage/HomePage'
 import sportsService from '../../utils/sportsService';
 import trackedGamesService from '../../utils/trackedGamesService';
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar from '../../components/NavBar/NavBar';
+
 
 
 
