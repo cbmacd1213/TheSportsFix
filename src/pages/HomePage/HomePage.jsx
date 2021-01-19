@@ -38,8 +38,7 @@ const HomePage = (props) => {
           <TrackedGame
           key={idx}
           game={game}
-          />
-          
+          /> 
           ))}
        
       </CardColumns>
@@ -62,7 +61,6 @@ const HomePage = (props) => {
       </div>
      
       <footer>
-    
       </footer>
     </div>
   )
