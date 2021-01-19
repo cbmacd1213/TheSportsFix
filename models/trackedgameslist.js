@@ -12,7 +12,7 @@ const trackedGamesListSchema = new Schema({
   strEvent: String,
   strTeam: String,
   strTeamLogo: String,
-  intHomeScore: String,
+  intHomeScore: String, 
   intAwayScore: String,
   strDescriptionEN: String,
   strWebsite: String,

@@ -56,7 +56,7 @@ const LeaguePage = (props) => {
             <ListGroup horizontal className="ListGroup">
                 {teams.teams && teams.teams.map((team) => (
                        
-                    <ListGroupItem className= "ListGroupItem" variant="flush">
+                    <ListGroupItem className= "ListGroupItem " variant="flush">
                         <TeamsList
                             team= {team}
                             history = {props.history}

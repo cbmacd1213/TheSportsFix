@@ -8,7 +8,6 @@ import TrackedTeam from '../../components/TrackedTeam/TrackedTeam';
 import { CardGroup, Card, CardColumns } from 'react-bootstrap';
 
 
-
 const HomePage = (props) => {
     const[trackedGames, setTrackedGames]= useState([])
     const[trackedTeams, setTrackedTeams]= useState([])
@@ -67,7 +66,6 @@ const HomePage = (props) => {
       </footer>
     </div>
   )
-
   }
 
 export default HomePage;
