@@ -60,6 +60,10 @@ const HomePage = (props) => {
       </CardColumns>
       </div>
      
+
+
+
+     
       <footer>
       </footer>
     </div>
