@@ -18,7 +18,6 @@ class App extends Component {
       user: userService.getUser(),
       sports: [], 
     };
-    console.log('DANG', this.state)
   }
 
   async componentDidMount(){

@@ -1,8 +1,6 @@
 import tokenService from './tokenService'
 const BASE_URL = '/api/trackedgames-api';
 
-
-
 export default {
   index,
   create,

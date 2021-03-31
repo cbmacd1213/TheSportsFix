@@ -15,6 +15,7 @@ module.exports = {
 }
 
 function leagueDetail(req, res) {
+    //         https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=4346
     axios.get(`https://www.thesportsdb.com/api/v1/json/${APIKEY}/lookup_all_teams.php?id=${leagueLookup[req.params.id]}`)
     .then(function (response) {
     // handle success

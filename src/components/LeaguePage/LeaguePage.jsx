@@ -10,13 +10,15 @@ import './LeaguePage.css'
 const LeaguePage = (props) => {
 
     let { league } = useParams();
-    const[events, setEvents]= useState(null)
-    const[teams, setTeams]= useState(null)
-    const[loading, setLoading]= useState(true)
+    const[events, setEvents]= useState(true)
+    const[teams, setTeams]= useState(true)
+    const[loading, setLoading]= useState(false)
     useEffect(()=>{
         sportsService.leagueDetail(league).then(res =>{
             setTeams(res)
+            console.log("FUCK", setTeams)
             sportsService.leagueEvents(league).then(res => {
+                console.log(res)
                 setEvents(res)
                 setLoading(false)
             })
@@ -55,7 +57,6 @@ const LeaguePage = (props) => {
                 <h3 className="some-titles text-center">Teams</h3>
             <ListGroup horizontal className="ListGroup">
                 {teams.teams && teams.teams.map((team) => (
-                       
                     <ListGroupItem className= "ListGroupItem " variant="flush">
                         <TeamsList
                             team= {team}
